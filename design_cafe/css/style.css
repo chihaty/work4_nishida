@@ -33,7 +33,7 @@ body {
 .contents {
     max-width: 1000px;
     margin: 0px auto;
-    padding: 10px;
+    padding: 0px 10px;
 }
 /*intro*/
 
@@ -61,21 +61,20 @@ body {
     display: flex;
     justify-content: space-between;
     margin-top: 93px;
+    align-items: center;
 }
 .coffee {
     width: 50%;
 }
 .coffee img {
     width: 100%;
-    height: 560px;
     border-bottom-right-radius: 82px;
 }
 .wrap {
     width: 41%;
 }
 .wrap h2 img {
-    margin-top: 67px;
-    width: 272px;
+    width: auto;
     height: 78px;
 }
 .wrap h3 {
@@ -94,15 +93,14 @@ body {
 }
 .section-title img {
     height: 78px;
+    width: auto;
 }
 
 /* menu */
 #menu {
     margin-top: 108px;
 }
-#menu h2 img {
-    width: 151px;
-}
+
 .menu-wrap {
     margin-top: 45px;
     display: flex;
@@ -131,9 +129,7 @@ body {
 #gallery {
     margin-top: 100px;
 }
-#gallery h2 img {
-    width: 245px;
-}
+
 .gallery-wrap {
     margin-top: 25px;
     display: flex;
@@ -146,20 +142,20 @@ body {
 #event {
     margin-top: 70px;
 }
-#event h2 img {
-    width: 173px;
-}
+
 .event-box {
     margin-top: 40px;
     border: 3px solid #4f260b;
     background: #fff;
-    padding: 40px 155px;
+    padding: 40px 20px;
     box-sizing: border-box;
 }
 .event-wrap {
     display: flex;
     flex-direction: column;
     gap: 22px;
+    max-width: 680px;
+    margin: 0 auto;
 }
 .event-wrap li {
     font-size: 23px;
@@ -173,9 +169,7 @@ body {
 #access {
     margin-top: 80px;
 }
-#access h2 img {
-    width: 213px;
-}
+
 #access iframe {
     filter: grayscale(100%) invert(92%) contrast(83%);
     width: 100%;
