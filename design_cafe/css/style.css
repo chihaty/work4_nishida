@@ -9,6 +9,7 @@
     position: absolute;
     width: 100%;
     box-sizing: border-box;
+    z-index: 10;
 }
 .header_nav ul {
     display: flex;
@@ -23,6 +24,93 @@
         "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
     font-weight: bold;
     font-size: 18px;
+}
+
+/* ハンバーガーメニュー */
+
+.hamburger,
+.header_nav-sp {
+    display: none;
+}
+
+/* スマホサイズになった時のハンバーガーメニュー */
+@media screen and (max-width: 767px) {
+    .hamburger {
+        display: block;
+        width: 33px;
+        height: 33px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 9999;
+        cursor: pointer;
+    }
+    .hamburger span {
+        position: absolute;
+        width: 33px;
+        height: 2px;
+        background-color: #fff;
+        top: 16px;
+        left: 0px;
+    }
+    .hamburger span::before,
+    .hamburger span::after {
+        position: absolute;
+        content: "";
+        width: 33px;
+        height: 2px;
+        background-color: #fff;
+        transition: 0.4s;
+    }
+    .hamburger span::before {
+        top: -15px;
+    }
+    .hamburger span::after {
+        bottom: -15px;
+    }
+
+    .header_nav {
+        display: none;
+    }
+
+    /* openがついた時に✕にする */
+
+    .open span {
+        background-color: transparent;
+    }
+    .open span::before {
+        transform: rotate(45deg);
+        top: 0;
+    }
+    .open span::after {
+        transform: rotate(-45deg);
+        bottom: 0;
+    }
+
+    /* SPメニューの背景設定 */
+
+    .header_nav-sp {
+        position: absolute;
+        z-index: 9998;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #000000a5;
+    }
+    .header_nav-sp ul {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+    .header_nav-sp a {
+        color: #fff;
+        font-family: "游ゴシック体", YuGothic, "游ゴシック Medium",
+            "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+    }
 }
 
 /*背景色*/
@@ -56,6 +144,9 @@ body {
     line-height: 1.65;
     letter-spacing: 0.1em;
 }
+.sentence-sp {
+    display: none;
+}
 /* about us */
 #about-us {
     display: flex;
@@ -63,12 +154,16 @@ body {
     margin-top: 93px;
     align-items: center;
 }
+
 .coffee {
     width: 50%;
 }
 .coffee img {
     width: 100%;
     border-bottom-right-radius: 82px;
+}
+.coffee h2 {
+    display: none;
 }
 .wrap {
     width: 41%;
@@ -181,7 +276,6 @@ body {
     margin-top: 82px;
     display: flex;
     gap: 64px;
-    justify-content: center;
 }
 .footer div img {
     width: 226px;
@@ -201,3 +295,188 @@ body {
     right: 20px;
     width: 125px;
 }
+.slick-dots {
+    bottom: 0;
+}
+.slick-dots li button:before,
+.slick-dots li.slick-active button:before {
+    color: #fff;
+}
+
+/* メディアクリエ */
+@media screen and (max-width: 1100px) {
+    #intro h2 {
+        font-size: 70px;
+    }
+    .wrap h3 {
+        font-size: 40px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .contents {
+        max-width: 767px;
+        padding: 0px 0px;
+    }
+    /* intro-sp */
+    #intro {
+        margin-top: 38px;
+    }
+    .copy {
+        font-size: 17px;
+    }
+    #intro h2 {
+        font-size: 38px;
+        line-height: 1.15;
+        letter-spacing: 0.02em;
+    }
+
+    .sentence {
+        display: none;
+    }
+
+    .sentence-sp {
+        display: block;
+        font-size: 16px;
+        line-height: 1.875;
+        letter-spacing: 0.1em;
+    }
+
+    /* about-us-sp */
+    #about-us {
+        display: block;
+        margin-top: 66px;
+    }
+    .coffee,
+    .wrap {
+        width: 100%;
+    }
+    .coffee img {
+        border-bottom-right-radius: 0px;
+    }
+    .coffee h2 {
+        display: block;
+        text-align: center;
+    }
+    .coffee h2 img {
+        height: 45px;
+        width: auto;
+        margin-bottom: 16px;
+    }
+    .wrap h2 {
+        display: none;
+    }
+    .wrap h3 {
+        margin-top: 30px;
+        font-size: 36px;
+        line-height: 1.25;
+        padding: 0px 20px;
+        box-sizing: border-box;
+    }
+    .wrap p {
+        margin-top: 30px;
+        line-height: 1.75;
+        padding: 0px 20px;
+        box-sizing: border-box;
+    }
+
+    /* 中見出しの指定 */
+    .section-title img {
+        height: 45px;
+    }
+    /* menu */
+    #menu {
+        margin-top: 57px;
+    }
+    .menu-wrap {
+        flex-direction: column;
+        gap: 60px;
+    }
+    .menu-wrap li {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .menu-wrap {
+        margin-top: 22px;
+    }
+    .menu-wrap li p {
+        margin-top: 21px;
+        line-height: 1.58;
+    }
+    .menu-wrap h3 {
+        font-size: 40px;
+    }
+
+    /* gallery */
+    #gallery {
+        margin-top: 94px;
+    }
+
+    /* event */
+    #event {
+        margin-top: 33px;
+    }
+    .event-box {
+        margin: 20px 40px 0px;
+        padding: 20px 20px;
+    }
+
+    .event-wrap {
+        gap: 28px;
+        white-space: nowrap;
+    }
+    .event-wrap li {
+        flex-direction: column;
+        gap: 6px;
+        font-size: 16px;
+    }
+    .event-wrap li p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    /* access */
+    #access {
+        margin-top: 32px;
+    }
+
+    #access iframe {
+        filter: grayscale(100%) invert(92%) contrast(83%);
+        width: 100%;
+        height: 191px;
+        margin-top: 9px;
+    }
+    /* footer */
+    .footer {
+        background: #fff;
+        margin: 0;
+        padding: 47px 19px 0px;
+        flex-direction: column;
+        gap: 36px;
+        box-sizing: border-box;
+    }
+    .info {
+        font-size: 18px;
+        line-height: 1.72;
+    }
+    .copyright {
+        background: #fff;
+        margin: 0px;
+        padding: 49px 0px 32px;
+        box-sizing: border-box;
+    }
+    .toTop {
+        width: 100px;
+    }
+}
+
+/* 質問1
+aiのデザインカンプの数字に合わせて諸々数字を変えました
+デザインカンプの方はアートボード幅が375pxなので、767pxで
+切り替わった時に小さく感じて、素直にデザインカンプの数字に合わせてよいのか
+なにか工夫がいるのかわかりませんでした。
+特にgooglemapの高さのところがデザインカンプの191pxにすると
+767pxのときの見た目がデザインカンプの印象と
+大分違ってしまい、自信がありません
+
+質問２
+eventのところで、表示しきれない文字が「・・・」となる部分にだけ
+アンダーラインがつかず、直し方がわかりませんでした*/
