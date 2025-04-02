@@ -258,7 +258,7 @@ body {
     gap: 55px;
 }
 .under-bar {
-    text-decoration: underline;
+    border-bottom: 2px solid #4f260b;
 }
 /* access */
 #access {
@@ -272,10 +272,16 @@ body {
     margin-top: 45px;
 }
 /* footer */
+.footer-wrap {
+    background: #fff;
+}
 .footer {
-    margin-top: 82px;
+    max-width: 1020px;
+    margin: 0px auto;
+    padding: 82px 10px 0px;
     display: flex;
     gap: 64px;
+    box-sizing: border-box;
 }
 .footer div img {
     width: 226px;
@@ -285,9 +291,10 @@ body {
     line-height: 1.95;
 }
 .copyright {
-    margin: 73px 0px 74px;
+    padding: 73px 0px 74px;
     font-size: 16px;
     text-align: center;
+    box-sizing: border-box;
 }
 .toTop {
     position: fixed;
@@ -423,6 +430,8 @@ body {
     .event-wrap {
         gap: 28px;
         white-space: nowrap;
+        max-width: 360px;
+        margin: 0;
     }
     .event-wrap li {
         flex-direction: column;
@@ -446,11 +455,9 @@ body {
     }
     /* footer */
     .footer {
-        background: #fff;
-        margin: 0;
-        padding: 47px 19px 0px;
         flex-direction: column;
         gap: 36px;
+        padding: 47px 19px 0px;
         box-sizing: border-box;
     }
     .info {
@@ -458,8 +465,6 @@ body {
         line-height: 1.72;
     }
     .copyright {
-        background: #fff;
-        margin: 0px;
         padding: 49px 0px 32px;
         box-sizing: border-box;
     }
@@ -468,15 +473,9 @@ body {
     }
 }
 
-/* 質問1
-aiのデザインカンプの数字に合わせて諸々数字を変えました
-デザインカンプの方はアートボード幅が375pxなので、767pxで
-切り替わった時に小さく感じて、素直にデザインカンプの数字に合わせてよいのか
-なにか工夫がいるのかわかりませんでした。
-特にgooglemapの高さのところがデザインカンプの191pxにすると
-767pxのときの見た目がデザインカンプの印象と
-大分違ってしまい、自信がありません
+/* 1.eventの文字下線が今度は長すぎてしまい、max-widthを小さくして
+調整しましたが、これでよいでしょうか？
 
-質問２
-eventのところで、表示しきれない文字が「・・・」となる部分にだけ
-アンダーラインがつかず、直し方がわかりませんでした*/
+2.lightboxで写真が表示された時に下に出る「image ◯ of △」の数字は
+「全部で△枚ある画像の内◯枚目です」という意味だと思うのですが、
+「image 12 of 17」 など、全部で画像６枚しかないのに大きな数字で表示され、理由がわからないです*/
